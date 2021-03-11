@@ -1,0 +1,16 @@
+.header-menu
+{
+	background-color: #90EE90;
+	text-decoration: none;
+	padding: 50px 0 50px 0;
+}
+.navbar-brand
+{
+	text-decoration: none;
+}
+.navbar > .navbar-brand, .navbar > .navbar-nav > .nav-item > .nav-link
+{
+	text-decoration: none;
+	color: #000000;
+	font-weight: 600;
+}
