@@ -1,4 +1,5 @@
 <?php
+?>
 ----------------------------------------------------------
 11-03-2021 Chaitanya Rout
 ----------------------------------------------------------
@@ -79,4 +80,3 @@ CREATE TABLE ag_crops (
   FOREIGN KEY (dt_id) REFERENCES ag_district(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 --------------------------------------------------------
-?>
