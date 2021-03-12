@@ -8,6 +8,15 @@
 	require_once 'classes/orm/States.php';
 	require_once 'classes/model/ModelStates.php';
 
+	require_once 'classes/orm/District.php';
+	require_once 'classes/model/ModelDistrict.php';
+
+	require_once 'classes/orm/Scheme.php';
+	require_once 'classes/model/ModelScheme.php';
+
+	require_once 'classes/orm/Crop.php';
+	require_once 'classes/model/ModelCrop.php';
+
 	require_once 'classes/helper/Helper.php';
 	
 
