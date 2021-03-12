@@ -52,7 +52,7 @@
             $this->scheme_name = $scheme_name;
         }
 
-          /*
+        /*
         * get scheme_name method
         */
         public function getSchemeName()
@@ -60,7 +60,7 @@
             return $this->scheme_name;
         }
 
-         /*
+        /*
         * set type method
         */
         public function setType($type)
