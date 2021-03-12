@@ -96,6 +96,7 @@
         * set date_add method
         */
         public function setDateAdd($date_add)
+        {
             $this->date_add = $date_add;
         }
         
