@@ -9,7 +9,7 @@
 
 	header('Set-Cookie: PHPSESSID='.session_id().'; SameSite=None; Secure');
 
-	// ini_set("display_errors", 1);
+	ini_set("display_errors", 1);
 
 	// session_set_cookie_params(7200);
 
@@ -47,7 +47,7 @@
 	}
 	else
 	{
-		$helper->redirect_link("home");
+		$helper->redirect_link("select_state");
 	}
 	Db::disconnect();
 

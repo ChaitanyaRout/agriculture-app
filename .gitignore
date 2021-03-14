@@ -1,3 +1,6 @@
 Error_log
 config
 templates_c
+super_admin/Error_log
+super_admin/config
+super_admin/templates_c
