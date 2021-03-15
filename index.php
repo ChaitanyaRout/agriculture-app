@@ -34,7 +34,6 @@
 
 	$page_fall = $helper->getValue('p');
 
-	error_log("page_fall: ".$page_fall);
 	if($page_fall)
 	{
 		if(file_exists($page_fall.".php"))
