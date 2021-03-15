@@ -79,4 +79,7 @@ CREATE TABLE ag_crops (
   PRIMARY KEY (id),
   FOREIGN KEY (dt_id) REFERENCES ag_district(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 --------------------------------------------------------
+## 14-March-2021 AKRAM SOLANKI ##
+INSERT INTO `ag_states` (`state_name`) VALUES ('Lakshadweep');
