@@ -10,8 +10,7 @@
         */
         public function getAllStates()
         {
-            $sql = "SELECT id, state_name, date_add, date_upd FROM ag_states ORDER BY state_name";
-
+            $sql = "SELECT id, state_name, date_add, date_upd FROM ag_states ORDER BY state_name ASC";
             $stmt = Db::getDbObject()->prepare($sql);
             // $stmt->bindValue(':id', $this->getId(), PDO::PARAM_INT);
             $stmt->execute();
