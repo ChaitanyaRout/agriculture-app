@@ -154,7 +154,9 @@ SelectState.prototype.onClickSelectStateSelector = function() {
 SelectState.prototype.onSelectState = function() {
     $('#select_state').on('change ', function() {
         if (this.value)
-            window.location.href = "index.php?p=home&state=" + this.value;
+        {
+            window.location.href = "index.php?p=home";
+        }
     });
 }
 
