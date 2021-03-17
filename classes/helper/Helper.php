@@ -258,5 +258,121 @@
 			else
 				return false;
 		}
+
+		public function phpMailer($mail_to, $subject, $message,$test = false, $from_name = false, $email_from = false, $reply_to = false,$attachment=false)
+		{
+			$merc_credential = false;
+			if($this->isDemoMode())
+			{
+				return true;
+			}
+			
+			$mail = new PHPMailer;
+			$obj_config_lang = new ModelConfigLang();
+			if (! Helper::$id_shop) {
+				 Helper::$id_shop = $this->getSession('shop_id');
+			}
+			$mail->isSMTP();                                      // Set mailer to use SMTP
+			$mail->SMTPAuth = true;                               // Enable SMTP authentication
+			// $mail->SMTPDebug = 2;							  //to show credentials
+			$smtp_config = $obj_config_lang->fetchSMTPConfig( Helper::$id_shop);
+			// error_log("smtp_config :: ".var_export($smtp_config,true));
+
+			$obj_user_settings = new ModelUserSettings();
+			$obj_user_settings->setId( Helper::$id_shop);
+			$mail->CharSet = 'UTF-8';							
+			// set charset as UTF-8
+			if (($test && $smtp_config[0]['value']) ||  ($obj_user_settings->getvalidateSmtp() && $smtp_config[0]['value'])) {
+				$mail->Host = $smtp_config[0]['value'];
+				$mail->Username = $smtp_config[1]['value']; // SMTP username
+				$mail->Password = $smtp_config[2]['value']; // SMTP password
+				$mail->SMTPSecure = $smtp_config[6]['value']; // Enable TLS encryption, `ssl` also accepted
+				$mail->Port = $smtp_config[7]['value'];
+
+				$mail->WordWrap = 70;                                 // Set word wrap to 70 characters
+				$mail->isHTML(true);
+
+				if (!$smtp_config[5]['value'])
+					$reply_to = REPLY_TO;
+				else
+					$reply_to = $smtp_config[5]['value'];
+
+				if (!$smtp_config[3]['value'] || $smtp_config[3]['value'] == '')
+					$email_from = EMAIL_FROM;
+				else
+					$email_from = $smtp_config[3]['value'];
+				$mail->From = $email_from;
+
+				if ($smtp_config[4]['value'])
+					$mail->FromName = $smtp_config[4]['value'];
+				else
+					$mail->FromName = FROM_NAME;
+
+					$mail->addReplyTo($reply_to);
+				$merc_credential = true;
+			}
+			else{
+				// error_log("Default config of Mail");
+				$mail->Host = HOST; // Specify main and backup SMTP servers
+				$mail->Username = USERNAME; // SMTP username
+				$mail->Password = PASSWORD; // SMTP password
+				$mail->SMTPSecure = SMTP_SECURE; // Enable TLS encryption, `ssl` also accepted
+				$mail->Port = PORT;
+
+				$mail->WordWrap = 70;                                 // Set word wrap to 70 characters
+				$mail->isHTML(true);                                  // Set email format to HTML
+
+				if (!$reply_to)
+					$reply_to = REPLY_TO;
+
+				if (!$email_from || $email_from == '')
+					$email_from = EMAIL_FROM;
+
+				$mail->From = $email_from;
+
+				if ($from_name)
+					$mail->FromName = $from_name;
+				else
+					$mail->FromName = FROM_NAME;
+
+				$mail->addReplyTo($reply_to);
+			}
+			//	$mail->addBCC('pratik@webkul.com');				  //can have two parameters
+			// $mail->addBCC('tapesh054@webkul.com');
+			// $mail->addBCC('rohit053@webkul.com');
+			$mail->Body = $message;
+			$mail->Subject = $subject;
+
+			if($attachment) {
+				$mail->addStringAttachment($attachment, "customer-details.csv");
+			}
+			$mail_count = 0;
+			if (is_array($mail_to))
+			{
+				foreach ($mail_to as $addr)
+				{
+					$mail->addAddress($addr);
+					$mail_count++;
+				}
+			}
+			else{
+				$mail->addAddress($mail_to);
+				$mail_count++;
+			}
+			$mail->AltBody = 'This is an auto generated mail from Product Auction.';			//alternate body
+			
+			
+			$result = $mail->send();
+			// error_log("mail Result :: ".var_export($result,true));
+			if (!$result){
+				error_log(print_r($mail->ErrorInfo));
+				return false;
+			}
+			else{
+				if(!$merc_credential)
+					$this->updateMailCount(Helper::$id_shop, $mail_count, $subject);
+				return true;
+			}
+		}
 	}
 ?>
