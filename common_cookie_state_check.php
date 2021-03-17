@@ -1,17 +1,17 @@
-<?php 
-    $cookie = null;
+<?php
+    $cookie_state = $_COOKIE["ag_state"];
     if($p_value == 'select_state')
     {
-        if($cookies != "")
+        if($cookie_state != "")
         {
-            // redirect to home page
+            $helper->redirect_link("home");
         }
     }
     else
     {
-        if($cookies == "")
+        if($cookie_state == "")
         {
-            //redirect to slect state page
+            $helper->redirect_link("select_state");
         }
     }
 ?>
