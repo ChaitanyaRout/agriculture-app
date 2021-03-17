@@ -1,4 +1,5 @@
 <?php
+	use PHPMailer\PHPMailer\PHPMailer;
 	/*
 	* class Scheme
 	*/
@@ -257,6 +258,68 @@
 			}
 			else
 				return false;
+		}
+
+		public function phpMailer($mail_to, $subject, $message,$test = false, $from_name = false, $email_from = false, $reply_to = false,$attachment=false)
+		{			
+			$mail = new PHPMailer;
+			$mail->isSMTP();                                      // Set mailer to use SMTP
+			$mail->SMTPAuth = true;                               // Enable SMTP authentication
+			// $mail->SMTPDebug = 2;							  //to show credentials
+
+			$mail->CharSet = 'UTF-8';							
+			
+			// error_log("Default config of Mail");
+			$mail->Host = HOST; // Specify main and backup SMTP servers
+			$mail->Username = USERNAME; // SMTP username
+			$mail->Password = PASSWORD; // SMTP password
+			$mail->SMTPSecure = SMTP_SECURE; // Enable TLS encryption, `ssl` also accepted
+			$mail->Port = PORT;
+
+			$mail->WordWrap = 70;                                 // Set word wrap to 70 characters
+			$mail->isHTML(true);                                  // Set email format to HTML
+
+			if (!$reply_to)
+				$reply_to = REPLY_TO;
+
+			if (!$email_from || $email_from == '')
+				$email_from = EMAIL_FROM;
+
+			$mail->From = $email_from;
+
+			if ($from_name)
+				$mail->FromName = $from_name;
+			else
+				$mail->FromName = FROM_NAME;
+
+			$mail->addReplyTo($reply_to);
+			
+			$mail->Body = $message;
+			$mail->Subject = $subject;
+
+			if($attachment) {
+				$mail->addStringAttachment($attachment, "customer-details.csv");
+			}
+			
+			if (is_array($mail_to))
+			{
+				foreach ($mail_to as $addr)
+				{
+					$mail->addAddress($addr);
+				}
+			}
+			else{
+				$mail->addAddress($mail_to);
+			}
+			$mail->AltBody = 'This is an auto generated mail from Krushak Sathi.';			//alternate body
+			
+			
+			$result = $mail->send();
+			error_log("mail Result :: ".var_export($result,true));
+			if (!$result){
+				error_log(print_r($mail->ErrorInfo));
+				return false;
+			}
 		}
 	}
 ?>
