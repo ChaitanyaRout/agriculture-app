@@ -80,6 +80,17 @@ CREATE TABLE ag_crops (
   FOREIGN KEY (dt_id) REFERENCES ag_district(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---------------------------------------------------------
+---------------------------------------------------------------
 ## 14-March-2021 AKRAM SOLANKI ##
 INSERT INTO `ag_states` (`state_name`) VALUES ('Lakshadweep');
+---------------------------------------------------------------
+## 17-March-2021 Chaitanya Rout ##
+Define it in config/server_config.php
+define("REPLY_TO", "no-reply@krushaksathi.com");
+define("EMAIL_FROM", "routjulu@gmail.com");
+define("FROM_NAME", "Krushak Sathi");
+define("HOST", "smtp.gmail.com");
+define("USERNAME", "chaitanyarout1997@gmail.com");
+define("PASSWORD", "Rout@\$chaitanya");
+define("SMTP_SECURE", "tls");
+define("PORT", 587);
