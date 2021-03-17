@@ -151,15 +151,19 @@ SelectState.prototype.onClickSelectStateSelector = function() {
     return this;
 }
 
-SelectState.prototype.onSelectState = function() {
+SelectState.prototype.onSelectState = function(obj_index) {
     $('#select_state').on('change ', function() {
         if (this.value)
-            window.location.href = "index.php?p=home&state=" + this.value;
+        {
+            obj_index.setCookie("ag_state",this.value);
+            window.location.href = "index.php?p=home";
+        }
     });
 }
 
 $(function() {
     var obj_select_state = new SelectState;
+    var obj_index = new Index;
     obj_select_state.onClickSelectStateSelector();
-    obj_select_state.onSelectState();
+    obj_select_state.onSelectState(obj_index);
 });

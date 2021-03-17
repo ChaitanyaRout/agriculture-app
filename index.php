@@ -32,8 +32,8 @@
 	$smarty = $helper->getSmarty();
 	// $shopifyHelper = ShopifyHelper::getShopifyHelper();
 
-	$page_fall = $helper->getValue('p');
-
+	$p_value = $page_fall = $helper->getValue('p');
+	
 	if($page_fall)
 	{
 		if(file_exists($page_fall.".php"))
