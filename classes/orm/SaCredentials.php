@@ -1,17 +1,18 @@
 <?php
     /*
-    * class District
+    * class SaCredentials
     */
-    class District
+    * class SaCredentials
     {
         private $id;
-        private $st_id;
-        private $district_name;
+        private $email;
+        private $password;
+        private $user_type;
         private $date_add;
         private $date_upd;
         
         /*
-        * set id method
+        * set Id method
         */
         public function setId($id)
         {
@@ -19,7 +20,7 @@
         }
 
         /*
-        * get id method
+        * get Id method
         */
         public function getId()
         {
@@ -27,35 +28,52 @@
         }
         
         /*
-        * set st_id method
+        * set Email method
         */
-        public function setSateId($st_id)
+        public function setEmail($email)
         {
-            $this->st_id = $st_id;
+            $this->email = $email;
         }
 
         /*
-        * get st_id method
+        * get Email method
         */
-        public function getSateId()
+        public function getEmail()
         {
-            return $this->st_id;
+            return $this->email;
         }
 
         /*
-        * set district_name method
+        * set Password method
         */
-        public function setDistrictName($district_name)
+        public function setPassword($password)
         {
-            $this->district_name = $district_name;
+            $this->password = $password;
         }
 
         /*
-        * get district_name method
+        * get Password method
         */
-        public function getDistrictName()
+        public function getPassword()
         {
-            return $this->district_name;
+            return $this->password;
+        }
+
+
+        /*
+        * set User_type method
+        */
+        public function setUserType($user_type)
+        {
+        $this->user_type = $user_type;
+        }
+
+        /*
+        * get User_type method
+        */
+        public function getUserType()
+        {
+            return $this->user_type;
         }
         
         /*
