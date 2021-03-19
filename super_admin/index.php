@@ -20,12 +20,13 @@
 	$helper = Helper::getHelper();
 	$smarty = $helper->getSmarty();
 
-	$page_fall = $helper->getValue('p');
+	$p_value = $page_fall = $helper->getValue('p');
 
 	if($page_fall)
 	{
 		if(file_exists($page_fall.".php"))
 		{
+			$smarty->assign("p_status",$page_fall);
 			require_once $page_fall.".php";
 		}
 		else
@@ -35,7 +36,7 @@
 	}
 	else
 	{
-		$helper->redirect_link("home");
+		$helper->redirect_link("sa_login");
 	}
 	Db::disconnect();
 
