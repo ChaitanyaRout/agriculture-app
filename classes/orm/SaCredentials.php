@@ -63,7 +63,7 @@
         /*
         * set User_type method
         */
-        public function setUser_type($user_type)
+        public function setUserType($user_type)
         {
         $this->user_type = $user_type;
         }
@@ -71,7 +71,7 @@
         /*
         * get User_type method
         */
-        public function getUser_type()
+        public function getUserType()
         {
             return $this->user_type;
         }
