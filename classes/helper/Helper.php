@@ -251,6 +251,22 @@
 				return false;
 		}
 
+		public function checkMethod($type)
+		{
+			if ($_SERVER['REQUEST_METHOD'] == $type)
+				return true;
+			else
+				return false;
+		}
+
+		public function getSession($session_name) {
+			if(isset($_SESSION[self::SESSION_CONSTANT.$session_name])) {
+				return $_SESSION[self::SESSION_CONSTANT.$session_name];
+			} else {
+				return false;
+			}
+		}
+
 		public function phpMailer($mail_to, $subject, $message,$test = false, $from_name = false, $email_from = false, $reply_to = false,$attachment=false)
 		{			
 			$mail = new PHPMailer;

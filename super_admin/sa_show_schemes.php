@@ -1,17 +1,17 @@
-<?php
+<?php    
     $today = date("d-m-Y");
-	ini_set('error_log', 'Error_log/'.$today.'-super-admin-login-error.log'); 
+	ini_set('error_log', 'Error_log/'.$today.'-super-admin-schemes-error.log');
 
 	$check_sa_session = $helper->isSuperAdminSessionStart();
 
-	if ($check_sa_session)
-	{
-		$helper->redirect_link('sa_dashboard');
-	}
+	if (!$check_sa_session)
+		$helper->redirect_link('sa_login');
 	else
 	{
-		if (!$p)
-			$p = "sa_login";
+		$obj_scheme = new ModelScheme();
+		$scheme = $obj_scheme->getAllScheme();
+
+		$smarty->assign('schemes',$scheme);
 
 		$notice = $helper->getNoticeSession('notice');
 		$helper->setNoticeSession();
@@ -21,6 +21,6 @@
 		$helper->setErrorSession();
 		$smarty->assign('error', $error);
 
-		$smarty->display('sa_login.tpl');
+		$smarty->display('sa_show_schemes.tpl');
 	}
 ?>

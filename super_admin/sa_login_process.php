@@ -1,6 +1,7 @@
 <?php
     $today = date("d-m-Y");
 	ini_set('error_log', 'Error_log/'.$today.'-super-admin-login-process-error.log'); 
+    
     $email = $helper->getValue('sa_email');
 	$password = $helper->getValue('sa_pass');
     
@@ -32,7 +33,6 @@
 		}
 		else
 		{
-			// Db::disconnect();
 			$helper->setErrorSession(1);
 			$helper->redirect_link('sa_login');
 		}

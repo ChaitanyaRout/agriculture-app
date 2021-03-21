@@ -2,7 +2,7 @@
     /*
     * class SaCredentials
     */
-    * class SaCredentials
+    class SaCredentials
     {
         private $id;
         private $email;
