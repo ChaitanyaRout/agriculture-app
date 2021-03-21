@@ -106,3 +106,8 @@ CREATE TABLE `ag_sa_credentials` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 ---------------------------------------------------------------
+## 21-03-2021 AKRAM SOLANKI ##
+
+define it in super_admin/config/server_config.php and config/server_config.php
+define("PAYMENT_NAME", "KrushakSathi");
+-----------------------------------------------------------------
