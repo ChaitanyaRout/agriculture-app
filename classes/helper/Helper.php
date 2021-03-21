@@ -5,6 +5,7 @@
 	*/
 	class Helper
 	{
+		const SESSION_CONSTANT = PAYMENT_NAME;
 		private static $smarty = null;
 		private static $helper = null;
 
@@ -99,16 +100,6 @@
 			$_SESSION[self::SESSION_CONSTANT.'shop'] = $shop_name;
 			$_SESSION[self::SESSION_CONSTANT.'shop_id'] = $user_id;
 			$_SESSION[self::SESSION_CONSTANT.'LAST_ACTIVITY'] = time();
-			return true;
-		}
-
-		public function setProductSession($shop_name,$shop_id,$id_product)
-		{
-			$session_key = $this->encryptKey($shop_name,$id_product);
-			$_SESSION[self::SESSION_CONSTANT.'key'] = $session_key;
-			$_SESSION[self::SESSION_CONSTANT.'shop'] = $shop_name;
-			$_SESSION[self::SESSION_CONSTANT.'shop_id'] = $shop_id;
-			$_SESSION[self::SESSION_CONSTANT.'id_product'] = $id_product;
 			return true;
 		}
 
@@ -258,6 +249,22 @@
 			}
 			else
 				return false;
+		}
+
+		public function checkMethod($type)
+		{
+			if ($_SERVER['REQUEST_METHOD'] == $type)
+				return true;
+			else
+				return false;
+		}
+
+		public function getSession($session_name) {
+			if(isset($_SESSION[self::SESSION_CONSTANT.$session_name])) {
+				return $_SESSION[self::SESSION_CONSTANT.$session_name];
+			} else {
+				return false;
+			}
 		}
 
 		public function phpMailer($mail_to, $subject, $message,$test = false, $from_name = false, $email_from = false, $reply_to = false,$attachment=false)

@@ -14,18 +14,19 @@
 	date_default_timezone_set('UTC');
 	$today = date("Y-m-d");
 	
-	ini_set("error_log", "Error_log/".$today."index php-error.log");
+	ini_set("error_log", "Error_log/".$today."-index-php-error.log");
 	require_once "config/defines.php";
 
 	$helper = Helper::getHelper();
 	$smarty = $helper->getSmarty();
 
-	$page_fall = $helper->getValue('p');
-
+	$p_value = $page_fall = $helper->getValue('p');
+	// error_log("P_VALUE: ".$p_value);
 	if($page_fall)
 	{
 		if(file_exists($page_fall.".php"))
 		{
+			$smarty->assign("p_status",$page_fall);
 			require_once $page_fall.".php";
 		}
 		else
@@ -35,7 +36,7 @@
 	}
 	else
 	{
-		$helper->redirect_link("home");
+		$helper->redirect_link("sa_login");
 	}
 	Db::disconnect();
 
