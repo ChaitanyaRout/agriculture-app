@@ -1,6 +1,10 @@
 Error_log
-config
+config/db_config.php
+config/index.php
+config/server_config.php
 templates_c
 super_admin/Error_log
-super_admin/config
+super_admin/config/db_config.php
+super_admin/config/index.php
+super_admin/config/server_config.php
 super_admin/templates_c
