@@ -10,9 +10,6 @@
 	}
 	else
 	{
-		if (!$p)
-			$p = "sa_login";
-
 		$notice = $helper->getNoticeSession('notice');
 		$helper->setNoticeSession();
 		$smarty->assign('notice', $notice);
