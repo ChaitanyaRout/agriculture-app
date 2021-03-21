@@ -51,8 +51,8 @@ CREATE TABLE ag_district (
   id int AUTO_INCREMENT,
   st_id int NOT NULL,
   district varchar(255),
-  date_add datetime,
-  date_upd datetime,
+  date_add datetime DEFAULT current_timestamp(),
+  date_upd datetime DEFAULT NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (st_id) REFERENCES ag_states(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -63,8 +63,8 @@ CREATE TABLE ag_scheme (
   scheme_name varchar(255),
   type smallint(1),
   link varchar(255),
-  date_add datetime,
-  date_upd datetime,
+  date_add datetime DEFAULT current_timestamp(),
+  date_upd datetime DEFAULT NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (st_id) REFERENCES ag_states(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -196,4 +196,20 @@ INSERT INTO `ag_crops` (`st_id`,`crop_name`,`type`) VALUES
 (1,'tobacco',1),
 (1,'cotton',1),
 (3,'tea',1);
-----------------------------------------------------------
+---------------------------------------------------------------
+## 20-March-2020 AKRAM SOLANKI ##
+CREATE TABLE `ag_sa_credentials` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `user_type` tinyint(1) DEFAULT NULL,
+  `date_add` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_upd` datetime,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+---------------------------------------------------------------
+## 21-03-2021 AKRAM SOLANKI ##
+
+define it in super_admin/config/server_config.php and config/server_config.php
+define("PAYMENT_NAME", "KrushakSathi");
+-----------------------------------------------------------------
