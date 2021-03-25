@@ -24,7 +24,7 @@
 	{if file_exists($module_js)}
     	<script type="text/javascript" src="{$module_js}"></script>      
 	{/if}
-	<title>{$title|default:"Agriculture Portal"}</title>
+	<title>{$title|default:"Krushak Sathi"}</title>
 </head>
 <body>
 	<style>

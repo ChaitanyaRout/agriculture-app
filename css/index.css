@@ -170,3 +170,31 @@ button.close {
     filter: alpha(opacity=20);
     opacity: .2;
 }
+
+.menu-bar
+{
+    text-align : center;
+    background: #577308;
+}
+
+.menu-bar ul
+{
+    display: inline-flex;
+    list-style: none;
+    color: #fff;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.menu-bar ul li
+ {
+     /* width:120px; */
+     margin:15px;
+     padding:15px;
+ }
+
+ .menu-bar ul li a
+ {
+     text-decoration:none;
+     color:#fff;
+ }
