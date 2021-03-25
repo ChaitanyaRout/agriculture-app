@@ -212,4 +212,36 @@ CREATE TABLE `ag_sa_credentials` (
 
 define it in super_admin/config/server_config.php and config/server_config.php
 define("PAYMENT_NAME", "KrushakSathi");
------------------------------------------------------------------
+----------------------------------------------------------------
+## 25-03-2021 CHAITANYA ROUT ##
+
+INSERT INTO `ag_scheme` (`id`, `st_id`, `scheme_name`, `type`, `link`, `date_add`, `date_upd`) VALUES
+(1, 3, 'Pradhan Mantri Krishi Sinchayee Yojana ', 1, 'php6B3.tmp.pdf', NULL, NULL),
+(2, 3, 'Credit Guarantee Fund Scheme', 1, 'phpA665.tmp.pdf', NULL, NULL),
+(3, 3, 'Equity Grant Scheme', 1, 'phpDE45.tmp.pdf', NULL, NULL),
+(4, 3, 'Farmer Producer Organisations', 1, 'php7378.tmp.pdf', NULL, NULL),
+(5, 3, 'Venture Capital Assistance Scheme', 1, 'phpA898.tmp.pdf', NULL, NULL),
+(6, 11, 'Important  scheme of Agriculture Department in Himachal Pradesh', 0, 'http://www.hpagriculture.com/schemes.html', NULL, NULL),
+(7, 12, 'KISAN CREDIT CARD (KCC) ', 1, 'phpBC61.tmp.pdf', NULL, NULL),
+(8, 12, 'PMKISAN', 1, 'php1000.tmp.pdf', NULL, NULL),
+(10, 13, 'Central Sector Scheme for MRIN', 1, 'phpC18C.tmp.pdf', NULL, NULL),
+(11, 13, 'Central Sector Scheme for ‘Mass Media Support to Agriculture ', 1, 'phpBB00.tmp.pdf', NULL, NULL),
+(12, 13, 'INTEGRATED SCHEME FOR AGRICULTURAL MARKETING', 1, 'phpA3BB.tmp.pdf', NULL, NULL),
+(13, 13, 'Progress Report Of AMIGS Scheme ', 1, 'php6269.tmp.pdf', NULL, NULL),
+(14, 15, 'Important  scheme of Agriculture Department in Kerala', 0, 'http://keralaagriculture.gov.in/category/schemes/', NULL, NULL),
+(15, 17, 'National Food Security Mission (NFSM)', 1, 'php6956.tmp.pdf', NULL, NULL),
+(16, 17, 'Important  scheme of Agriculture Department in Madhya Pradesh', 0, 'http://mpkrishi.mp.gov.in/hindisite_New/suvidhaye_New.aspx', NULL, NULL),
+(17, 18, 'Information Adarshgaon Yojana and Project', 1, 'php71A6.tmp.pdf', NULL, NULL),
+(18, 18, 'Dr. Babasaheb Ambedkar Krushi Swavalamban Yojna', 1, 'phpDA44.tmp.pdf', NULL, NULL),
+(19, 18, 'Tribal Sub Plan / Birsa Munda Krushi Kranti Yojna', 1, 'php5E1B.tmp.pdf', NULL, NULL),
+(20, 18, 'Other thaan Tribal Sub Plan / Birsa Munda Krushi Kranti Yojna', 1, 'phpCDBE.tmp.pdf', NULL, NULL),
+(21, 18, 'Evaluation Report of Kitchen Garden Scheme', 1, 'php7960.tmp.pdf', NULL, NULL),
+(22, 19, 'Rashtriya Khrishi Vikasn Yojna', 1, 'php2667.tmp.pdf', NULL, NULL),
+(23, 19, 'NATIONAL AGRICULTURAL INSURANCE SCHEME (NAIS)', 1, 'php4656.tmp.pdf', NULL, NULL),
+(24, 20, 'Important  scheme of Agriculture Department in Meghalaya', 0, 'http://www.megagriculture.gov.in/PUBLIC/schemes_agriculture.aspx', NULL, NULL),
+(25, 21, 'Important  scheme of Agriculture Department in Mizoram', 0, 'https://agriculturemizoram.nic.in/', NULL, NULL),
+(26, 23, 'Important  scheme of Agriculture Department in Odisha', 0, 'http://agriodisha.nic.in/Home/Scheme', NULL, NULL),
+(27, 28, 'Important  scheme of Agriculture Department in Tamil Nadu', 0, 'https://www.tn.gov.in/scheme/department_wise/2', NULL, NULL),
+(28, 30, 'Important  scheme of Agriculture Department in Tripura', 0, 'https://agri.tripura.gov.in/schemes1', NULL, NULL),
+(29, 33, 'Important  scheme of Agriculture Department in Uttar Pradesh', 0, 'http://upagripardarshi.gov.in/StaticPages/StateSponsored-CropBreeding.aspx', NULL, NULL);
+---------------------------------------------------------------------------------------------------------------
