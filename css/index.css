@@ -115,3 +115,86 @@ body {
     padding: 10px 0px 0px 0px;
     background-color: transparent;
 }
+
+.notice {
+    z-index: 600;
+    display: none;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.88);
+    color: #FFFFFF;
+    position: fixed;
+    bottom: 0;
+    height: 80px;
+    line-height: 50px;
+    font-size: 1.4em;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.fq-error {
+    z-index: 600;
+    display: none;
+    width: 100%;
+    background-color: rgba(191, 16, 16, 0.87);
+    color: #FFFFFF;
+    position: fixed;
+    bottom: 0;
+    height: 80px;
+    line-height: 50px;
+    font-size: 1.4em;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.fq-error button {
+    position: relative;
+    top: 15px;
+    right: 30px;
+}
+
+button.close {
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 0;
+}
+
+.close {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+}
+
+.menu-bar
+{
+    text-align : center;
+    background: #577308;
+}
+
+.menu-bar ul
+{
+    display: inline-flex;
+    list-style: none;
+    color: #fff;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.menu-bar ul li
+ {
+     /* width:120px; */
+     margin:15px;
+     padding:15px;
+ }
+
+ .menu-bar ul li a
+ {
+     text-decoration:none;
+     color:#fff;
+ }
