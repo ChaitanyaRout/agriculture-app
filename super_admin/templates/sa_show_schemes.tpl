@@ -40,8 +40,8 @@
                                 <td>{$scheme['scheme_name']}</td>
                                 <td>{if $scheme['type'] == 0}Link{else if $scheme['type'] == 1}File{/if}
                                 <td class="text-center text-capitalize vertical_center">
-                                    <a href="index.php?p=sa_app_information_edit&id={$scheme['id']}" class="glyphicon glyphicon-edit color-red curser-pointer" aria-hidden="Edit" data-toggle="tooltip" data-placement="top" title="Edit"></a>
-                                    <span class="glyphicon glyphicon-trash color-red curser-pointer del_app_information" data-value="{$scheme['id']}"  aria-hidden="Delete" data-toggle="tooltip" data-placement="top" data-target="" title="Delete App Information??"></span>
+                                    <a href="index.php?p=sa_add_scheme&id={$scheme['id']}" class="glyphicon glyphicon-edit color-red curser-pointer" aria-hidden="Edit" data-toggle="tooltip" data-placement="top" title="Edit"></a>
+                                    <a href="index.php?p=sa_scheme_process&id={$scheme['id']}&action=delete" class="glyphicon glyphicon-trash color-red curser-pointers" data-value="{$scheme['id']}"  aria-hidden="Delete" data-toggle="tooltip" data-placement="top" data-target="" title="Delete App Information??"></a>
                                 </td>
                             </tr>
                         {/foreach}

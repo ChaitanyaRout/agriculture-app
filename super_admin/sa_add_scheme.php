@@ -10,9 +10,23 @@
 		$helper->redirect_link('sa_login');
 	else
 	{
-        $obj_state = new ModelStates();
-        $states = $obj_state->getAllStates();
-        $smarty->assign('states',$states);
+		$id = $helper->getValue("id");
+		error_log("id: ".$id);
+		if($id)
+		{
+			$smarty->assign('id',$id);
+			$obj_scheme = new ModelScheme();
+			$obj_scheme->setId($id);
+			$scheme = $obj_scheme->getSchemeById();
+			error_log("scheme: ".var_export($scheme,true));
+			$smarty->assign('scheme',$scheme);
+		}
+		else
+		{
+			$obj_state = new ModelStates();
+			$states = $obj_state->getAllStates();
+			$smarty->assign('states',$states);
+		}
 
 		$notice = $helper->getNoticeSession('notice');
 		$helper->setNoticeSession();

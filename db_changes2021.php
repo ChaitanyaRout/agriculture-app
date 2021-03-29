@@ -98,6 +98,8 @@ define("PORT", 587);
 ---------------------------------------------------------------
 ## 21-03-2021 Chaitanya Rout ##
 
+ALTER TABLE `ag_crops` ADD COLUMN `type` SMALLINT(1) NOT NULL;
+
 INSERT INTO `ag_crops` (`st_id`,`crop_name`,`type`) VALUES 
 (25,'rice',1),
 (25,'maize',1),
@@ -244,4 +246,8 @@ INSERT INTO `ag_scheme` (`id`, `st_id`, `scheme_name`, `type`, `link`, `date_add
 (27, 28, 'Important  scheme of Agriculture Department in Tamil Nadu', 0, 'https://www.tn.gov.in/scheme/department_wise/2', NULL, NULL),
 (28, 30, 'Important  scheme of Agriculture Department in Tripura', 0, 'https://agri.tripura.gov.in/schemes1', NULL, NULL),
 (29, 33, 'Important  scheme of Agriculture Department in Uttar Pradesh', 0, 'http://upagripardarshi.gov.in/StaticPages/StateSponsored-CropBreeding.aspx', NULL, NULL);
----------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## 29-03-2021 AKRAM SOLANKI ##
+define("UPLOAD_FILE_PATH","uploads/"); //Add this in config/server_config.php
+define("UPLOAD_FILE_PATH","../uploads/"); //Add this in super_admin/config/server_config.php
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
