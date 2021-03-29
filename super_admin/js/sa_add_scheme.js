@@ -21,16 +21,16 @@ SaAddScheme.prototype.onSubmitSchemeForm = function() {
         var link = $(this).find("input[name='link']").val();
         var file = $(this).find("input[name='file']").val();
 
-        if (!state_name) {
+        if (!id && !state_name) {
             e.preventDefault();
             return false;
-        } else if (!scheme_name) {
+        } else if (!id && !scheme_name) {
             e.preventDefault();
             return false;
-        } else if (type == 0 && !link) {
+        } else if (!id && type == 0 && !link) {
             e.preventDefault();
             return false;
-        } else if (type == 1 && !file) {
+        } else if (!id && type == 1 && !file) {
             e.preventDefault();
             return false;
         }

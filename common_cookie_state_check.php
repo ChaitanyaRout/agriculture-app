@@ -1,5 +1,5 @@
 <?php
-    $cookie_state = $_COOKIE["ag_state"];
+    $cookie_state = isset($_COOKIE["ag_state"]) ? $_COOKIE['ag_state'] : "";
     if($p_value == 'select_state')
     {
         if($cookie_state != "")

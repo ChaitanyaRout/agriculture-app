@@ -1,5 +1,5 @@
 <?php
-	require_once "smarty/libs/smarty.class.php";
+	require_once "smarty/libs/Smarty.class.php";
 
 	require_once '../vendor/autoload.php';
 

@@ -6,7 +6,7 @@
 	
 	session_start();
 	ob_start();
-	ini_set("display_errors", 0);
+	ini_set("display_errors", 1);
 	header('Set-Cookie: PHPSESSID='.session_id().'; SameSite=None; Secure');
 
 	ini_set("log_errors", 1);

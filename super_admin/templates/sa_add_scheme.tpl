@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-12 margin-bottom-10"></div>
             <div class="col-md-12" style="border: 1px solid #CCCCCC; border-radius: 3px; padding: 20px;">
-                <form class="form" action="index.php?p=sa_add_scheme_process" id="scheme_form" method="post" enctype="multipart/form-data">
+                <form class="form" action="index.php?p=sa_scheme_process&action={if isset($id)}edit&id={$id}{else}add{/if}" id="scheme_form" method="post" enctype="multipart/form-data">
                     <h1 class="text-center" style="margin-bottom: 20px;">{if isset($id)}Edit{else}Add{/if} Scheme</h1>
                     <div class="form-group">
                         <div class="row">
@@ -56,7 +56,7 @@
                         <div class="row">
                             <div class="col-md-2 col-sm-4 col-xs-12"><label for="Link"><strong>Link</strong></label></div>
                             <div class="col-md-10 col-sm-8 col-xs-12">
-                                <input type="text" name="link" class="form-control" {if isset($scheme['type']) && $scheme['type'] == 0}value="{$schme['link']}"{/if}>
+                                <input type="text" name="link" class="form-control" {if isset($scheme['type']) && $scheme['type'] == 0}value="{$scheme['link']}"{/if}>
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,11 @@
                         <div class="row">
                             <div class="col-md-2 col-sm-4 col-xs-12"><label for="Link"><strong>File</strong></label></div>
                             <div class="col-md-10 col-sm-8 col-xs-12">
-                                <input type="file" name="file" {if isset($scheme['type']) && $scheme['type'] == 1}value="{$schme['link']}"{/if}>
+                                <input type="file" name="file"  style="display: inline">
+                                {if isset($scheme['type']) && $scheme['type'] == 1}
+                                    <input type="hidden" name="previous_file" value="{$scheme['link']}">
+                                    <span class="text-danger" style='font-size: 30px; display: inline'><span style="font-size: 40px !important;">&#10003;</span> File Uploaded!</span>
+                                {/if}
                             </div>
                         </div>
                     </div>
@@ -77,3 +81,6 @@
             </div>
         </div>
     </div>
+    <script>
+    var id = "{$id}";
+    </script>
