@@ -16,7 +16,7 @@ Index.prototype.getCookie = function(name) {
         }
     }
 }
-
+var obj_index = new Index;
 $(function() {
     var obj_index = new Index;
 });
