@@ -86,5 +86,20 @@
 
             return true;
         }
+
+        /*
+        * get Scheme by st_Id
+        * return type associative array
+        */
+        public function getSchemeByStateId()
+        {
+            $sql = "SELECT id, st_id, scheme_name, type, link FROM ag_scheme WHERE st_id = :st_id ORDER BY id ASC";
+            $stmt = Db::getDbObject()->prepare($sql);
+            $stmt->bindValue(':st_id', $this->getSateId(), PDO::PARAM_INT);
+            $stmt->execute();
+            $scheme = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            return $scheme;
+        }
     }
 ?>
