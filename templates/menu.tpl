@@ -17,6 +17,7 @@
 			<li><a href="index.php?p=weather_forecast">Weather Forecast</a></li>
 			<li><a href="index.php?p=agri_business">Agri Business</a></li>
 			<li><a href="index.php?p=about_us">About us</a></li>
+			<li><a href="#" id="select_state_logout">Select State</a></li>
 		</ul>
 	</div>
 {/if}
