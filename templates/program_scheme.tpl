@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 {include file="menu.tpl"}
-<div class="container body-content" style="{if !$schemes}font-size: 40px;{else}font-size: 20px;{/if}">
+<div class="container body-content" style="{if !$schemes}font-size: 40px; padding: 20px !important;{else}font-size: 20px;{/if}">
     {if $schemes}
         <ul class="hand-bullets">
             {foreach $schemes as $scheme}

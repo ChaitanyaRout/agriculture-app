@@ -5,7 +5,7 @@
     class Crop
     {
         private $id;
-        private $dt_id;
+        private $st_id;
         private $crop_name;
         private $date_add;
         private $date_upd;
@@ -27,19 +27,19 @@
         }
         
         /*
-        * set dt_id method
+        * set st_id method
         */
-        public function setDistrictId($dt_id)
+        public function setStateId($st_id)
         {
-            $this->dt_id = $dt_id;
+            $this->st_id = $st_id;
         }
 
         /*
-        * get dt_id method
+        * get st_id method
         */
-        public function getDistrictId()
+        public function getstateId()
         {
-            return $this->dt_id;
+            return $this->st_id;
         }
 
         /*

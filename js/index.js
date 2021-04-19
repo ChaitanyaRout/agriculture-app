@@ -16,7 +16,17 @@ Index.prototype.getCookie = function(name) {
         }
     }
 }
+
+Index.prototype.clearStateCookie = function() {
+    $('#select_state_logout').click(function(e){
+        e.preventDefault();
+        obj_index.setCookie('ag_state','');
+        location.reload();
+    });
+}
+
 var obj_index = new Index;
 $(function() {
     var obj_index = new Index;
+    obj_index.clearStateCookie();
 });
