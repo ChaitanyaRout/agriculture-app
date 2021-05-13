@@ -251,3 +251,5 @@ INSERT INTO `ag_scheme` (`id`, `st_id`, `scheme_name`, `type`, `link`, `date_add
 define("UPLOAD_FILE_PATH","uploads/"); //Add this in config/server_config.php
 define("UPLOAD_FILE_PATH","../uploads/"); //Add this in super_admin/config/server_config.php
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## 19-04-2021 AKRAM SOLANKI ##
+ALTER TABLE ag_states ADD COLUMN `capital` varchar(255) DEFAULT NULL;
