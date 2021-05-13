@@ -3,8 +3,16 @@
 	ini_set('error_log', 'Error_log/'.$today.'-weather_forecast-error.log'); 
 	include "common_cookie_state_check.php";
 
-	$apiKey = WEATHER_API_KEY;
-    $data = $helper->getCapitalWeather($apiKey, "Junagarh");
+	$data = false;
+
+	$obj_states = new ModelStates();
+	$obj_states->setStateName($cookie_state);
+	$state_details = $obj_states->getStateDetailByName();
+	if($state_details)
+	{
+		$capital = explode(", ",$state_details['capital']);
+		$data = $helper->getCapitalWeather(WEATHER_API_KEY, $capital[0]);
+	}
 
 	error_log('data: '.var_export($data,true));
 	if($data)
