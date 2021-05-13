@@ -81,7 +81,7 @@ CREATE TABLE ag_crops (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 ---------------------------------------------------------------
-## 14-March-2021 AKRAM SOLANKI ##
+## 14-March-2021 CHAITANYA ROUT ##
 INSERT INTO `ag_states` (`state_name`) VALUES ('Lakshadweep');
 ---------------------------------------------------------------
 ## 17-March-2021 Chaitanya Rout ##
@@ -199,7 +199,7 @@ INSERT INTO `ag_crops` (`st_id`,`crop_name`,`type`) VALUES
 (1,'cotton',1),
 (3,'tea',1);
 ---------------------------------------------------------------
-## 20-March-2020 AKRAM SOLANKI ##
+## 20-March-2020 CHAITANYA ROUT ##
 CREATE TABLE `ag_sa_credentials` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -210,7 +210,7 @@ CREATE TABLE `ag_sa_credentials` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 ---------------------------------------------------------------
-## 21-03-2021 AKRAM SOLANKI ##
+## 21-03-2021 CHAITANYA ROUT ##
 
 define it in super_admin/config/server_config.php and config/server_config.php
 define("PAYMENT_NAME", "KrushakSathi");
@@ -247,7 +247,9 @@ INSERT INTO `ag_scheme` (`id`, `st_id`, `scheme_name`, `type`, `link`, `date_add
 (28, 30, 'Important  scheme of Agriculture Department in Tripura', 0, 'https://agri.tripura.gov.in/schemes1', NULL, NULL),
 (29, 33, 'Important  scheme of Agriculture Department in Uttar Pradesh', 0, 'http://upagripardarshi.gov.in/StaticPages/StateSponsored-CropBreeding.aspx', NULL, NULL);
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## 29-03-2021 AKRAM SOLANKI ##
+## 29-03-2021 CHAITANYA ROUT ##
 define("UPLOAD_FILE_PATH","uploads/"); //Add this in config/server_config.php
 define("UPLOAD_FILE_PATH","../uploads/"); //Add this in super_admin/config/server_config.php
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## 19-04-2021 CHAITANYA ROUT ##
+ALTER TABLE ag_states ADD COLUMN `capital` varchar(255) DEFAULT NULL;

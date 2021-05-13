@@ -6,6 +6,7 @@
     {
         private $id;
         private $state_name;
+        private $capital_name;
         private $date_add;
         private $date_upd;
         
@@ -39,6 +40,22 @@
         public function getStateName()
         {
             return $this->state_name;
+        }
+        
+        /*
+        * set capital_name method
+        */
+        public function setCapitalName($capital_name)
+        {
+            $this->capital_name = $capital_name;
+        }
+
+        /*
+        * get capital_name method
+        */
+        public function getCapitalName()
+        {
+            return $this->capital_name;
         }
         
         /*
