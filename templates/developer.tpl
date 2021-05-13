@@ -16,24 +16,24 @@
         </div>
         <div class="body-card-content text-left">
             <div class="col-lg-3 col-md-9 col-sm-12 col-xs-12">
-                <img class="img-rounded img-responsive" style="height: 180px;" src="images/developers_images/chaitanya_rout.jpeg" alt="Chaitanya Rout">
+                <img class="img-rounded img-responsive" style="height: 180px;" src="images/developers_images/tribhuban_sahu.jpeg" alt="Tribhuban Sahu">
             </div>
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 develeopers_details">
                <p class="developer_heading"><strong>Name         :</strong>     Tribhuban Sahu</p>
-               <p class="developer_heading"><strong>Email        :</strong>     Chaitanyarout1997@gmail.com</p>
+               <p class="developer_heading"><strong>Email        :</strong>     sahuvikash128@gmail.com</p>
                <p class="developer_heading"><strong>Regd No.     :</strong>     1925298037</p>
-               <p class="developer_heading"><strong>Roll No.     :</strong>     55</p>
+               <p class="developer_heading"><strong>Roll No.     :</strong>     65</p>
             </div>
         </div>
         <div class="body-card-content text-left">
             <div class="col-lg-3 col-md-9 col-sm-12 col-xs-12">
-                <img class="img-rounded img-responsive" style="height: 180px;" src="images/developers_images/chaitanya_rout.jpeg" alt="Chaitanya Rout">
+                <img class="img-rounded img-responsive" style="height: 180px;" src="images/developers_images/sk_nehal.jpeg" alt="SK NEHAL">
             </div>
             <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 develeopers_details">
                <p class="developer_heading"><strong>Name         :</strong>     Sk Nehal</p>
-               <p class="developer_heading"><strong>Email        :</strong>     Chaitanyarout1997@gmail.com</p>
+               <p class="developer_heading"><strong>Email        :</strong>     sknehal786786@gmail.com</p>
                <p class="developer_heading"><strong>Regd No.     :</strong>     1805298026</p>
-               <p class="developer_heading"><strong>Roll No.     :</strong>     55</p>
+               <p class="developer_heading"><strong>Roll No.     :</strong>     28</p>
             </div>
         </div>
     </div>
