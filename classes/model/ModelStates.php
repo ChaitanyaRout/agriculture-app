@@ -25,7 +25,7 @@
         */
         public function getStateDetailByName()
         {
-            $sql = "SELECT id, state_name, date_add, date_upd FROM ag_states WHERE state_name = :state_name";
+            $sql = "SELECT id, state_name, capital, date_add, date_upd FROM ag_states WHERE state_name = :state_name";
             $stmt = Db::getDbObject()->prepare($sql);
             $stmt->bindValue(':state_name', $this->getStateName(), PDO::PARAM_STR);
             $stmt->execute();
